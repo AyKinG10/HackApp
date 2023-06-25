@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('application.index');
 });
 
 Auth::routes([
@@ -22,4 +22,3 @@ Auth::routes([
     ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/email/verify/{id}/{hash}', fn ()=>'verify')->middleware(['auth','signed'])->name('verification.verify');
